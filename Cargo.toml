@@ -1,0 +1,20 @@
+[package]
+name = "study"
+version = "0.1.0"
+authors = ["angelrain1 <lagudomeze@163.com>"]
+
+[dependencies]
+tokio-core      = "0.1"
+tokio-io        = "0.1"
+crossbeam       = "0.3"
+lazy_static     = "0.2"
+futures         = "0.1"
+bytes           = "0.4"
+tokio_kcp       = "0.4"
+log             = "0.3"
+env_logger      = "0.4"
+glfw            = "0.16"
+h2              = { git = 'https://github.com/carllerche/h2' }
+
+[dependencies.mio]
+version = "0.6"
