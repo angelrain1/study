@@ -7,13 +7,13 @@ fn main() {
 
     // Create a windowed mode window and its OpenGL context
 
-    let (mut window, events) = glfw.with_primary_monitor(|glfw, m| {
-        glfw.create_window(300, 300, "Hello this is window",
-                           m.map_or(glfw::WindowMode::Windowed, |m| glfw::WindowMode::FullScreen(m)))
-    }).expect("Failed to create GLFW window.");
+//    let (mut window, events) = glfw.with_primary_monitor(|glfw, m| {
+//        glfw.create_window(300, 300, "Hello this is window",
+//                           m.map_or(glfw::WindowMode::Windowed, |m| glfw::WindowMode::FullScreen(m)))
+//    }).expect("Failed to create GLFW window.");
 
-//    let (mut window, events) = glfw.create_window(300, 300, "Hello this is window", glfw::WindowMode::Windowed)
-//                                   .expect("Failed to create GLFW window.");
+    let (mut window, events) = glfw.create_window(300, 300, "Hello this is window", glfw::WindowMode::Windowed)
+                                   .expect("Failed to create GLFW window.");
 
     // Make the window's context current
     window.make_current();
