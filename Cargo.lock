@@ -6,6 +6,7 @@ dependencies = [
  "crossbeam 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "env_logger 0.4.3 (registry+https://github.com/rust-lang/crates.io-index)",
  "futures 0.1.15 (registry+https://github.com/rust-lang/crates.io-index)",
+ "futures-await 0.1.0 (git+https://github.com/alexcrichton/futures-await)",
  "glfw 0.16.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "gtk 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "h2 0.1.0 (git+https://github.com/carllerche/h2)",
@@ -151,6 +152,31 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 name = "futures"
 version = "0.1.15"
 source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "futures-async-macro"
+version = "0.1.0"
+source = "git+https://github.com/alexcrichton/futures-await#4a461ef87fe90c95f417b9987f1f064617b265fb"
+dependencies = [
+ "proc-macro2 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)",
+ "quote 0.3.15 (git+https://github.com/dtolnay/quote)",
+ "syn 0.11.11 (git+https://github.com/dtolnay/syn)",
+]
+
+[[package]]
+name = "futures-await"
+version = "0.1.0"
+source = "git+https://github.com/alexcrichton/futures-await#4a461ef87fe90c95f417b9987f1f064617b265fb"
+dependencies = [
+ "futures 0.1.15 (registry+https://github.com/rust-lang/crates.io-index)",
+ "futures-async-macro 0.1.0 (git+https://github.com/alexcrichton/futures-await)",
+ "futures-await-macro 0.1.0 (git+https://github.com/alexcrichton/futures-await)",
+]
+
+[[package]]
+name = "futures-await-macro"
+version = "0.1.0"
+source = "git+https://github.com/alexcrichton/futures-await#4a461ef87fe90c95f417b9987f1f064617b265fb"
 
 [[package]]
 name = "gcc"
@@ -577,6 +603,22 @@ version = "0.3.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
+name = "proc-macro2"
+version = "0.1.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "unicode-xid 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "quote"
+version = "0.3.15"
+source = "git+https://github.com/dtolnay/quote#873c0d0ecda5acaa8727262f00122856be745e61"
+dependencies = [
+ "proc-macro2 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
 name = "rand"
 version = "0.3.16"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -639,6 +681,26 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 name = "string"
 version = "0.1.0"
 source = "git+https://github.com/carllerche/string#376413b9447b561500b0fe223a03b8999920b656"
+
+[[package]]
+name = "syn"
+version = "0.11.11"
+source = "git+https://github.com/dtolnay/syn#d5e985994ca58039ea22d6fde8acb821d9058f2f"
+dependencies = [
+ "proc-macro2 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)",
+ "quote 0.3.15 (git+https://github.com/dtolnay/quote)",
+ "synom 0.11.3 (git+https://github.com/dtolnay/syn)",
+ "unicode-xid 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "synom"
+version = "0.11.3"
+source = "git+https://github.com/dtolnay/syn#d5e985994ca58039ea22d6fde8acb821d9058f2f"
+dependencies = [
+ "proc-macro2 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)",
+ "quote 0.3.15 (git+https://github.com/dtolnay/quote)",
+]
 
 [[package]]
 name = "thread_local"
@@ -710,6 +772,11 @@ dependencies = [
 ]
 
 [[package]]
+name = "unicode-xid"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
 name = "unreachable"
 version = "1.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -766,6 +833,9 @@ dependencies = [
 "checksum env_logger 0.4.3 (registry+https://github.com/rust-lang/crates.io-index)" = "3ddf21e73e016298f5cb37d6ef8e8da8e39f91f9ec8b0df44b7deb16a9f8cd5b"
 "checksum fnv 1.0.5 (registry+https://github.com/rust-lang/crates.io-index)" = "6cc484842f1e2884faf56f529f960cc12ad8c71ce96cc7abba0a067c98fee344"
 "checksum futures 0.1.15 (registry+https://github.com/rust-lang/crates.io-index)" = "a82bdc62350ca9d7974c760e9665102fc9d740992a528c2254aa930e53b783c4"
+"checksum futures-async-macro 0.1.0 (git+https://github.com/alexcrichton/futures-await)" = "<none>"
+"checksum futures-await 0.1.0 (git+https://github.com/alexcrichton/futures-await)" = "<none>"
+"checksum futures-await-macro 0.1.0 (git+https://github.com/alexcrichton/futures-await)" = "<none>"
 "checksum gcc 0.3.53 (registry+https://github.com/rust-lang/crates.io-index)" = "e8310f7e9c890398b0e80e301c4f474e9918d2b27fca8f48486ca775fa9ffc5a"
 "checksum gdk 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)" = "f30018ecbbb1e6f1d59c4024ec08675850744b799abc5420be0629ac9ba0abd2"
 "checksum gdk-pixbuf 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = "caf05dab73febcc6e90abaff8f24cfe1cf1bd2222cd648ddfe337bf3b994489f"
@@ -806,6 +876,8 @@ dependencies = [
 "checksum pango 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = "5afa4b4c5380315b12075e7767d9bdd62d53beeb6087d9287ef6990e57a6b643"
 "checksum pango-sys 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)" = "e6ec8d90306b5ff43f5836f4363267ea95be02b3df71d2b31ba8fbb1680bdee1"
 "checksum pkg-config 0.3.9 (registry+https://github.com/rust-lang/crates.io-index)" = "3a8b4c6b8165cd1a1cd4b9b120978131389f64bdaf456435caa41e630edba903"
+"checksum proc-macro2 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)" = "6d47d6743c87ed75a15255073f423fad97e4903f98863be88c14a6f0849b8b90"
+"checksum quote 0.3.15 (git+https://github.com/dtolnay/quote)" = "<none>"
 "checksum rand 0.3.16 (registry+https://github.com/rust-lang/crates.io-index)" = "eb250fd207a4729c976794d03db689c9be1d634ab5a1c9da9492a13d8fecbcdf"
 "checksum redox_syscall 0.1.30 (registry+https://github.com/rust-lang/crates.io-index)" = "8312fba776a49cf390b7b62f3135f9b294d8617f7a7592cfd0ac2492b658cd7b"
 "checksum regex 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)" = "1731164734096285ec2a5ec7fea5248ae2f5485b3feeb0115af4fda2183b2d1b"
@@ -816,12 +888,15 @@ dependencies = [
 "checksum slab 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)" = "17b4fcaed89ab08ef143da37bc52adbcc04d4a69014f4c1208d6b51f0c47bc23"
 "checksum slab 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)" = "fdeff4cd9ecff59ec7e3744cbca73dfe5ac35c2aedb2cfba8a1c715a18912e9d"
 "checksum string 0.1.0 (git+https://github.com/carllerche/string)" = "<none>"
+"checksum syn 0.11.11 (git+https://github.com/dtolnay/syn)" = "<none>"
+"checksum synom 0.11.3 (git+https://github.com/dtolnay/syn)" = "<none>"
 "checksum thread_local 0.3.4 (registry+https://github.com/rust-lang/crates.io-index)" = "1697c4b57aeeb7a536b647165a2825faddffb1d3bad386d507709bd51a90bb14"
 "checksum time 0.1.38 (registry+https://github.com/rust-lang/crates.io-index)" = "d5d788d3aa77bc0ef3e9621256885555368b47bd495c13dd2e7413c89f845520"
 "checksum tokio-core 0.1.9 (registry+https://github.com/rust-lang/crates.io-index)" = "e85d419699ec4b71bfe35bbc25bb8771e52eff0471a7f75c853ad06e200b4f86"
 "checksum tokio-io 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)" = "b4ab83e7adb5677e42e405fa4ceff75659d93c4d7d7dd22f52fcec59ee9f02af"
 "checksum tokio-timer 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)" = "6131e780037787ff1b3f8aad9da83bca02438b72277850dd6ad0d455e0e20efc"
 "checksum tokio_kcp 0.4.1 (registry+https://github.com/rust-lang/crates.io-index)" = "031933b0b95a123814aba3f2e2065536e383201fc8ae3dd42c1de64554ceb447"
+"checksum unicode-xid 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)" = "fc72304796d0818e357ead4e000d19c9c174ab23dc11093ac919054d20a6a7fc"
 "checksum unreachable 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)" = "382810877fe448991dfc7f0dd6e3ae5d58088fd0ea5e35189655f84e6814fa56"
 "checksum utf8-ranges 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)" = "662fab6525a98beff2921d7f61a39e7d59e0b425ebc7d0d9e66d316e55124122"
 "checksum void 1.0.2 (registry+https://github.com/rust-lang/crates.io-index)" = "6a02e4885ed3bc0f2de90ea6dd45ebcbb66dacffe03547fadbb0eeae2770887d"
