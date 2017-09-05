@@ -117,7 +117,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 [[package]]
 name = "futures-async-macro"
 version = "0.1.0"
-source = "git+https://github.com/alexcrichton/futures-await#e09c87c7aa796bf6e5b6d8d45d6cba2078d12210"
+source = "git+https://github.com/alexcrichton/futures-await#6ee220367800f7586480ffb3ce77af1856066e56"
 dependencies = [
  "proc-macro2 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)",
  "quote 0.3.15 (git+https://github.com/dtolnay/quote)",
@@ -127,7 +127,7 @@ dependencies = [
 [[package]]
 name = "futures-await"
 version = "0.1.0"
-source = "git+https://github.com/alexcrichton/futures-await#e09c87c7aa796bf6e5b6d8d45d6cba2078d12210"
+source = "git+https://github.com/alexcrichton/futures-await#6ee220367800f7586480ffb3ce77af1856066e56"
 dependencies = [
  "futures 0.1.15 (registry+https://github.com/rust-lang/crates.io-index)",
  "futures-async-macro 0.1.0 (git+https://github.com/alexcrichton/futures-await)",
@@ -137,7 +137,7 @@ dependencies = [
 [[package]]
 name = "futures-await-macro"
 version = "0.1.0"
-source = "git+https://github.com/alexcrichton/futures-await#e09c87c7aa796bf6e5b6d8d45d6cba2078d12210"
+source = "git+https://github.com/alexcrichton/futures-await#6ee220367800f7586480ffb3ce77af1856066e56"
 
 [[package]]
 name = "gcc"
@@ -169,13 +169,13 @@ dependencies = [
 [[package]]
 name = "h2"
 version = "0.1.0"
-source = "git+https://github.com/carllerche/h2#0b1fbc4b39bc2aa35cac7e142c025f055afdf5be"
+source = "git+https://github.com/carllerche/h2#bbcfffee464317aa9b66714986cf728885d8e837"
 dependencies = [
  "byteorder 1.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "bytes 0.4.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "fnv 1.0.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "futures 0.1.15 (registry+https://github.com/rust-lang/crates.io-index)",
- "http 0.1.0 (git+https://github.com/carllerche/http?branch=lower-case-header-name-parsing)",
+ "http 0.1.0 (git+https://github.com/carllerche/http?rev=2dd15d9)",
  "log 0.3.8 (registry+https://github.com/rust-lang/crates.io-index)",
  "slab 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "string 0.1.0 (git+https://github.com/carllerche/string)",
@@ -186,7 +186,7 @@ dependencies = [
 [[package]]
 name = "http"
 version = "0.1.0"
-source = "git+https://github.com/carllerche/http?branch=lower-case-header-name-parsing#c3fb8fa4ae4a0773a8419212ecf534440d306c2f"
+source = "git+https://github.com/carllerche/http?rev=2dd15d9#2dd15d9d3fb74189340925a8f14f26f51c8b1df6"
 dependencies = [
  "bytes 0.4.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "fnv 1.0.5 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -203,7 +203,7 @@ dependencies = [
 
 [[package]]
 name = "kcp"
-version = "0.4.8"
+version = "0.4.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "bytes 0.4.5 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -576,7 +576,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "bytes 0.4.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "futures 0.1.15 (registry+https://github.com/rust-lang/crates.io-index)",
- "kcp 0.4.8 (registry+https://github.com/rust-lang/crates.io-index)",
+ "kcp 0.4.9 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.3.8 (registry+https://github.com/rust-lang/crates.io-index)",
  "mio 0.6.10 (registry+https://github.com/rust-lang/crates.io-index)",
  "time 0.1.38 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -654,9 +654,9 @@ dependencies = [
 "checksum glfw 0.16.0 (registry+https://github.com/rust-lang/crates.io-index)" = "79c2ccb2b9a749b69f96cabc014551bb2d64787d958ba9fdace8c1d0105849b4"
 "checksum glfw-sys 3.2.2 (registry+https://github.com/rust-lang/crates.io-index)" = "f72bb86276679c5370276224546eef2dce99b23da2f364fd8b097c79db310b39"
 "checksum h2 0.1.0 (git+https://github.com/carllerche/h2)" = "<none>"
-"checksum http 0.1.0 (git+https://github.com/carllerche/http?branch=lower-case-header-name-parsing)" = "<none>"
+"checksum http 0.1.0 (git+https://github.com/carllerche/http?rev=2dd15d9)" = "<none>"
 "checksum iovec 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)" = "29d062ee61fccdf25be172e70f34c9f6efc597e1fb8f6526e8437b2046ab26be"
-"checksum kcp 0.4.8 (registry+https://github.com/rust-lang/crates.io-index)" = "49de22e498f8b90d2718697ffcbbc7ea6da4e9462b1927f97242f85af48c6bda"
+"checksum kcp 0.4.9 (registry+https://github.com/rust-lang/crates.io-index)" = "19d60c7a190d0af49d8a5aafb050d061b5fdaf4aceac59418a9952d6165a4021"
 "checksum kernel32-sys 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)" = "7507624b29483431c0ba2d82aece8ca6cdba9382bff4ddd0f7490560c056098d"
 "checksum lazy_static 0.2.8 (registry+https://github.com/rust-lang/crates.io-index)" = "3b37545ab726dd833ec6420aaba8231c5b320814b9029ad585555d2a03e94fbf"
 "checksum lazycell 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)" = "3b585b7a6811fb03aa10e74b278a0f00f8dd9b45dc681f148bb29fa5cb61859b"
