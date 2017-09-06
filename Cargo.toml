@@ -17,6 +17,9 @@ glfw            = "0.16"
 h2              = { git = 'https://github.com/carllerche/h2' }
 futures-await   = { git = 'https://github.com/alexcrichton/futures-await' }
 time            = "0.1.38"
+miow            = "0.2.1"
+ring            = "0.12"
+data-encoding   = "2.0.0-rc.2"
 
 [dependencies.rusqlite]
 version = "0.12.0"
@@ -29,3 +32,5 @@ version = "0.6"
 #version = "0.2.0"
 #features = ["v3_16"]
 
+[target."cfg(windows)".dependencies.winapi]
+version = "0.2.1"
