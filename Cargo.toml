@@ -20,6 +20,7 @@ time            = "0.1.38"
 miow            = "0.2.1"
 ring            = "0.12"
 data-encoding   = "2.0.0-rc.2"
+memmap          = "0.5.2"
 
 [dependencies.rusqlite]
 version = "0.12.0"
