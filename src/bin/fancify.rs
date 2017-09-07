@@ -20,34 +20,23 @@ struct Cli {
     verbosity: u64,
 }
 
-fn main() {
-    let args = Cli::from_args();
-    loggerv::init_with_verbosity(args.verbosity).expect("");
-
-    let thing = "foobar";
-
-    debug!("Thing happened: {}", thing);
-
-    info!("It's all good!");
+error_chain! {
+    foreign_links {
+        Log(::log::SetLoggerError);
+    }
 }
 
-//quick_main!(|| -> Result<()> {
-//    let args = Cli::from_args();
-//
-//    loggerv::init_with_verbosity(args.verbosity)?;
-//
-//    // ...
-//    let thing = "foobar";
-//    debug!("Thing happened: {}", thing);
-//    // ...
-//
-//    info!("It's all good!");
-//    Ok(())
-//});
-//
-//error_chain! {
-//    foreign_links {
-//        Log(::log::SetLoggerError);
-//    }
-//}
+quick_main!(|| -> Result<()> {
+    let args = Cli::from_args();
+
+    loggerv::init_with_verbosity(args.verbosity)?;
+
+    // ...
+    let thing = "foobar";
+    debug!("Thing happened: {}", thing);
+    // ...
+
+    info!("It's all good!");
+    Ok(())
+});
 
