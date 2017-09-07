@@ -10,8 +10,8 @@ use memmap::{Mmap, Protection};
 
 fn run() -> Result<()> {
     {
-        File::create("content.txt")?
-            .write_all(b"My hovercraft      l  o      !")?;
+        let mut f = File::create("content.txt")?;
+        f.write_all(b"My hovercraft      l  o      !")?;
     }
 
     let f = File::open("content.txt")?;
