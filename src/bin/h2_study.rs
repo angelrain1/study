@@ -1,6 +1,6 @@
-extern crate h2;
+//extern crate h2;
 
-use h2::server::Server;
+//use h2::server::Server;
 
 trait A {
     fn what_type(&self);
