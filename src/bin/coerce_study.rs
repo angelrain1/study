@@ -35,9 +35,7 @@ fn assert_same_type<T: ?Sized>(_: &T, _: &T) {}
 fn main() {
     let another_string = "This string is local to the main function";
 
-    let mut bbb = String::with_capacity(512);
-
-    std::io::stdin().read_line(&mut bbb).expect("");
+    let bbb = String::from("akdlfjadlf手动阀乐山大佛科技阿里23");
 
     println!("{:?}", bbb.chars().size_hint());
 
