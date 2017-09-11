@@ -35,6 +35,14 @@ fn assert_same_type<T: ?Sized>(_: &T, _: &T) {}
 fn main() {
     let another_string = "This string is local to the main function";
 
+    let mut bbb = String::with_capacity(512);
+
+    std::io::stdin().read_line(&mut bbb).expect("");
+
+    println!("{:?}", bbb.chars().size_hint());
+
+    println!("{:?}", bbb.chars().count());
+
     assert_same_type(CONSTANT_STRING, another_string);
 
     println!("size of constant string:{}", std::mem::size_of_val(CONSTANT_STRING));
