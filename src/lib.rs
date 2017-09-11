@@ -1,6 +1,3 @@
-#![feature(test)]
-extern crate test;
-
 pub fn do_nothing_slowly() {
     print!(".");
     for _ in 1..10_000_000 {};

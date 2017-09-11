@@ -30,7 +30,7 @@ const CONSTANT_STRING: &'static str = "This is a constant string";
 
 const CONSTANT_ARRAY: &'static [u8] = &[0u8; 128];
 
-fn assert_same_type<'a, 'b, T: ?Sized>(_: &'a T, _: &'b T) {}
+fn assert_same_type<T: ?Sized>(_: &T, _: &T) {}
 
 fn main() {
     let another_string = "This string is local to the main function";

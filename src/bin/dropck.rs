@@ -18,9 +18,7 @@ static TEST: &'static str = "test";
 struct A(u8);
 
 impl A {
-    pub fn test(s: &str) -> &'static str {
-        return OK;
-    }
+    pub fn test(_: &str) -> &'static str { OK }
 }
 
 use std::collections::HashMap;
@@ -40,13 +38,16 @@ impl Foo for u8 { fn method(&self) -> String { format!("u8: {}", *self) } }
 impl Foo for String { fn method(&self) -> String { format!("string: {}", *self) } }
 
 fn main() {
-    let mut foo = Foo2 { data: Vec::new() };
-    foo.data.push(Concrete(0, Cell::new(None)));
-    foo.data.push(Concrete(0, Cell::new(None)));
+    let map: &HashMap<&'static str, fn(&str) -> &'static str> = &HASHMAP;
+    map.get("123").map(|f| { println!("{:p}", f); });
+
+    let mut foo1 = Foo2 { data: Vec::new() };
+    foo1.data.push(Concrete(0, Cell::new(None)));
+    foo1.data.push(Concrete(0, Cell::new(None)));
 
     {
-        foo.data[0].1.set(Some(&foo.data[1]));
-        foo.data[1].1.set(Some(&foo.data[0]));
+        foo1.data[0].1.set(Some(&foo1.data[1]));
+        foo1.data[1].1.set(Some(&foo1.data[0]));
     }
 
     println!("{}", std::mem::size_of::<&Foo>());
