@@ -14,7 +14,7 @@ tokio_kcp       = "0.4"
 log             = "0.3"
 env_logger      = "0.4"
 glfw            = "0.16"
-h2              = { git = 'https://github.com/carllerche/h2' }
+h2              = { git = 'https://github.com/carllerche/h2', features = ["unstable"] }
 futures-await   = { git = 'https://github.com/alexcrichton/futures-await' }
 time            = "0.1.38"
 miow            = "0.2.1"

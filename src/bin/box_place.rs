@@ -6,7 +6,31 @@
 
 struct A(i32);
 
+use std::ops::Placer;
+
+pub struct Stack(Vec<u32>);
+
+impl Stack {
+    pub fn new() -> Self {
+        Stack(Vec::new())
+    }
+}
+
+impl<'a> Placer<u32> for &'a mut Stack {
+    type Place = std::vec::PlaceBack<'a, u32>;
+
+    fn make_place(self) -> Self::Place {
+        println!("here!");
+        self.0.place_back().make_place()
+    }
+}
+
 fn main() {
+    let mut stack = Stack::new();
+    &mut stack <- 1u32;
+    println!("Doesn't get here!");
+
+
     let mut map = std::collections::HashMap::new();
 
     let k = 8;
