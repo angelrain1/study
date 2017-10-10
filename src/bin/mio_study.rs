@@ -4,15 +4,13 @@ extern crate winapi;
 
 use mio::{Evented, Poll, PollOpt, Ready, Token};
 
-use mio::windows::{Overlapped, Binding};
+use mio::windows::{Binding};
 
 use std::os::windows::prelude::*;
 
 use std::fs::{File as StdFile, OpenOptions};
 
 use std::io;
-
-use std::io::prelude::*;
 
 struct File {
     file: StdFile,
@@ -29,14 +27,14 @@ impl File {
 }
 
 impl Evented for File {
-    fn register(&self, poll: &Poll, token: Token, interest: Ready, opts: PollOpt) -> io::Result<()> {
+    fn register(&self, poll: &Poll, token: Token, _interest: Ready, _opts: PollOpt) -> io::Result<()> {
         unsafe {
             self.bind.register_handle(&self.file, token, poll)?;
         }
         Ok(())
     }
 
-    fn reregister(&self, poll: &Poll, token: Token, interest: Ready, opts: PollOpt) -> io::Result<()> {
+    fn reregister(&self, poll: &Poll, token: Token, _interest: Ready, _opts: PollOpt) -> io::Result<()> {
         unsafe {
             self.bind.reregister_handle(&self.file, token, poll)?;
         }
@@ -66,7 +64,7 @@ fn main() {
         .open("1.txt")
         .expect("");
 
-    let mut f = File::new(file);
+    let f = File::new(file);
 
     poll.register(&f, Token(1), Ready::writable() | Ready::readable(), PollOpt::edge()).expect("");
 

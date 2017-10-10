@@ -1,3 +1,5 @@
+
+
 struct Context<'s>(&'s str);
 
 struct Parser<'c, 's: 'c> {
@@ -341,16 +343,19 @@ static HUFFMAN_CODE_TABLE: &'static [(u32, u8)] = &[
     (0x3fff_ffff, 30),
 ];
 
+#[allow(dead_code)]
 enum HuffmanCode {
     A(u8),
     B(u8, u8),
 }
 
+#[allow(dead_code)]
 enum HuffmanTree<'a> {
     Leaf(HuffmanCode),
     Node([Option<&'a HuffmanTree<'a>>; 256]),
 }
 
+#[allow(dead_code)]
 #[derive(Debug, Ord, PartialOrd, Eq, PartialEq)]
 enum HuffmanNode {
     A(u8, (u32, u8)),
@@ -375,6 +380,8 @@ fn level0() -> HuffmanTree<'static> {
 use std::collections::HashMap;
 
 fn main() {
+    let _a = level0();
+
     let mut vec: Vec<HuffmanNode2> = HUFFMAN_CODE_TABLE
         .iter()
         .map(|&(a, b)| {

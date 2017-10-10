@@ -3,7 +3,7 @@ extern crate time;
 
 use time::Timespec;
 
-use rusqlite::{Connection, DatabaseName, OpenFlags};
+use rusqlite::{Connection, DatabaseName};
 
 #[derive(Debug)]
 struct Person {

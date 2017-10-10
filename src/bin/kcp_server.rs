@@ -14,8 +14,6 @@ use tokio_io::AsyncRead;
 use tokio_io::io::copy;
 use tokio_kcp::KcpListener;
 
-use std::net::UdpSocket;
-
 fn main() {
 //    let socket = UdpSocket::bind("127.0.0.1:1234").expect("couldn't bind to address");
 //

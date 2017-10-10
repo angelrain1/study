@@ -17,7 +17,7 @@ use tokio_core::reactor::Core;
 use tokio_io::AsyncRead;
 use tokio_io::codec::{Decoder, Encoder};
 use tokio_kcp::KcpStream;
-use ::tokio_io::io::{copy, read_to_end, write_all};
+use ::tokio_io::io::write_all;
 
 fn main() {
     let _ = env_logger::init();
@@ -53,8 +53,8 @@ fn main() {
                 let write_stdout = stream.for_each(move |buf| stdout.write_all(&buf));
 
                 send_stdin.map(|_| ())
-                          .join(write_stdout.map(|_| ()))
-                          .then(|_| Ok(()))
+                    .join(write_stdout.map(|_| ()))
+                    .then(|_| Ok(()))
             });
 
     core.run(client).unwrap();
