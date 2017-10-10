@@ -18,7 +18,7 @@ struct File {
     file: StdFile,
     bind: Binding,
 }
-
+/**/
 impl File {
     fn new(raw: StdFile) -> File {
         File {
@@ -76,7 +76,7 @@ fn main() {
 
     std::thread::spawn(move || {
         {
-            if let Err(e) = FileExt::seek_write(&f.file, "1234546526".as_bytes(), 0) {
+            if let Err(e) = FileExt::seek_write(&f.file, b"1234546526", 0) {
                 println!("e:{},kind:{:?}", e, e.kind());
                 println!("{}", winapi::ERROR_IO_PENDING);
             }

@@ -39,12 +39,12 @@ fn main() {
 
     let mut stdout = io::stdout();
     let client =
-        write_all(stream, "hello".as_bytes())
+        write_all(stream, b"hello")
             .map(|(stream, _)| stream)
-            .and_then(|mut stream| {
+            .and_then(|stream| {
                 let (sink, stream) = stream.framed(Bytes).split();
                 let send_stdin = stdin_rx.and_then(|msg| {
-                    if msg == "\n".as_bytes() {
+                    if msg == b"\n" {
                         Err(std::io::Error::from(std::io::ErrorKind::ConnectionAborted))
                     } else {
                         Ok(msg)

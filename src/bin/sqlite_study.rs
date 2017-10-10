@@ -90,7 +90,7 @@ fn main() {
     let flag = Arc::new(ATOMIC_BOOL_INIT);
 
     for _ in 0..15 {
-        let inner = flag.clone();
+        let inner = Arc::clone(&flag);
 
         std::thread::spawn(move || {
             let rc = Connection::open("file:data.db?mode=rw").expect("");
@@ -120,7 +120,7 @@ fn main() {
 
     let do_backup = Arc::new(ATOMIC_BOOL_INIT);
 
-    let inner2 = do_backup.clone();
+    let inner2 = Arc::clone(&do_backup);
 
     std::thread::spawn(move || {
         while !inner2.load(Ordering::Relaxed) {
@@ -150,10 +150,10 @@ fn main() {
         {
             let mut insert = tx.prepare("INSERT INTO person (name, time_created, data) VALUES (?1, ?2, ?3)").expect("");
 
-            for j in 0..10000 {
+            for j in 0..10_000 {
                 let me = Person {
-                    id: i * 10000 + j,
-                    name: format!("Steven_{}", i * 10000 + j),
+                    id: i * 10_000 + j,
+                    name: format!("Steven_{}", i * 10_000 + j),
                     time_created: time::get_time(),
                     data: None
                 };

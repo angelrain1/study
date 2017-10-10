@@ -1,4 +1,4 @@
-#![feature(const_fn)]
+#![feature(const_fn, const_size_of)]
 
 trait SizeTrait {
     const SIZE: usize;

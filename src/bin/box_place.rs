@@ -10,8 +10,8 @@ use std::ops::Placer;
 
 pub struct Stack(Vec<u32>);
 
-impl Stack {
-    pub fn new() -> Self {
+impl Default for Stack {
+    fn default() -> Self {
         Stack(Vec::new())
     }
 }
@@ -26,7 +26,7 @@ impl<'a> Placer<u32> for &'a mut Stack {
 }
 
 fn main() {
-    let mut stack = Stack::new();
+    let mut stack = Stack::default();
     &mut stack <- 1u32;
     println!("Doesn't get here!");
 

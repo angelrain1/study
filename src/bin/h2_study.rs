@@ -23,5 +23,5 @@ fn main() {
     let z = 1;
     z.what_type();
 
-    (z as i64).is_positive();
+    i64::from(z).is_positive();
 }
